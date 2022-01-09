@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+    nch3:
+      docker:
+            - image: circleci/ruby:2.5.3
+      parallelism: 16
+      steps:
+        - run:
+            lscpu
+
+workflows:
+    version: 2.1
+    build:
+        jobs:
+        - nch3
